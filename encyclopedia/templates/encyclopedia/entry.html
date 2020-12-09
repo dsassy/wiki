@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <a class="btn btn-outline-secondary" href="/wiki/{{ title }}/edit" role="button">Edit</a>    
+    {{ name | safe }}
+    {% for message in messages %}
+        <!-- Displays error message if entry doesnt exist-->
+        <div class="alert alert-success">
+            {{ title }} {{ message }}
+        </div>
+    {% endfor %}
+
+{% endblock %}

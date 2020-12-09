@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for entry in entries %}
+        <!-- lists entries in encyclopedia as links to their pages-->
+            <li><a href="{% url 'entry' entry %}" value="{ entry }">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
